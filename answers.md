@@ -15,6 +15,8 @@ Place all written answers from `recitation-06.md` here for easier grading.
   - **1a) (1 pt)** What is the work/span of *deleteMin*?
 
   - **1b) (1 pt)** What is the work/span ofand *insert(x)*?
+ 
+  Before implementing a heap, *insert(x)* is just an append command; $W(n) = O(1), S(n) = O(n)$
 
 - **2a) (1 pt)** For a heap with $n$ elements, what does this imply about the depth of the associated almost-complete binary tree? 
 
