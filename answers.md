@@ -24,7 +24,9 @@ Place all written answers from `recitation-06.md` here for easier grading.
  
   Before implementing a heap, *insert(x)* is just an append command; $W(n) = O(1), S(n) = O(n)$
 
-- **2a) (1 pt)** For a heap with $n$ elements, what does this imply about the depth of the associated almost-complete binary tree? 
+- **2a) (1 pt)** For a heap with $n$ elements, what does this imply about the depth of the associated almost-complete binary tree?
+
+The heap will have binary splits until $\frac{n}{2^h} = 1$ where $h$ is the depth, so the depth is equal to $log{_2}{n} rounded down to the nearest whole number (a one element heap counts as depth zero)
 
 - **2b) (1 pt)** By maintaining the heap property, where is the minimum element of
   the heap? Can we say anything about the maximum element?
