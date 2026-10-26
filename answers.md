@@ -13,6 +13,12 @@ Place all written answers from `recitation-06.md` here for easier grading.
  an unordered list/sequence. 
 
   - **1a) (1 pt)** What is the work/span of *deleteMin*?
+ 
+  Before implementing a heap, *deleteMin* would be done by comparing pairs of elements in parallel, finding the min in combination, and deleting the final value.
+
+  Work: This gives $W(n) = 2W(\frac{n}{2}) + 1 = O(n)$
+
+  Span: The longest chain of dependency would be the height of the tree, so when $\frac{n}{2^{h}} = 2$, so $S(n) = O(logn)$
 
   - **1b) (1 pt)** What is the work/span ofand *insert(x)*?
  
