@@ -31,6 +31,8 @@ The heap will have binary splits until $\frac{n}{2^h} = 1$ where $h$ is the dept
 - **2b) (1 pt)** By maintaining the heap property, where is the minimum element of
   the heap? Can we say anything about the maximum element?
 
+The minimum element will be the root of the heap, and the maximum will be a the bottom level / maximum depth
+
 - **4a) (1 pt)** What is the work/span of *reheapUp*($x$)?
 
 - **4b) (1 pt)** What is the work/span of *reheapDown*($x$)? 
