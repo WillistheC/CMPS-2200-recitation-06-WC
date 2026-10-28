@@ -35,6 +35,19 @@ The minimum element will be the root of the heap, and the maximum will be a the 
 
 - **4a) (1 pt)** What is the work/span of *reheapUp*($x$)?
 
+  Follows a chain with maximum length $log{_2}{n}$
+
+  Work: The worst case is $x$ travels from the leaf to the root, constant work across $O(logn)$ levels gives $W(n) = O(logn)$
+
+  Span: The swaps form a sequential chain of dependency across $O(logn)$ levels gives $L(n) = O(logn)$
+
 - **4b) (1 pt)** What is the work/span of *reheapDown*($x$)? 
+
+  Follows a chain with maximum length $log{_2}{n}$
+
+  Work: The worst case is $x$ travels from the root to the leaf, constant work across $O(logn)$ levels gives $W(n) = O(logn)$
+
+  Span: The swaps form a sequential chain of dependency across $O(logn)$ levels gives $L(n) = O(logn)$
+
 
 - **6) (1 pt)** What is the work and span of `heapsort`?
