@@ -110,9 +110,10 @@ class BinaryHeap:
         """
         m = self.H[0]
         if (len(self.H) > 1):
-            ## TODO
-            pass
-
+            r = self.H.pop()
+            self.H[0] = r
+            self.reheapDown(0)
+            return m
         else:
             self.H.pop() # removes the only element left
         return m
@@ -125,7 +126,8 @@ class BinaryHeap:
 
         Returns nothing.
         """
-        pass
+        self.H.append(x)
+        self.reheapUp(len(self.H) - 1)
 
 def heapsort(a):
     """
@@ -141,6 +143,8 @@ def heapsort(a):
     """
     H = BinaryHeap()
     sorted_a = []
-    ## TO DO
-
+    for x in a:
+        H.insert(x)
+    for x in range(len(a)):
+        sorted_a.append(H.deleteMin())
     return sorted_a
