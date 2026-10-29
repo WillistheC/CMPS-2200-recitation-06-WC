@@ -51,3 +51,11 @@ The minimum element will be the root of the heap, and the maximum will be a the 
 
 
 - **6) (1 pt)** What is the work and span of `heapsort`?
+
+  heapsort calls insert and deletemin $n$ times
+
+  Each of these methods calls reheapUp/Down (same work and span)
+
+  So $W(n) = nO(logn) + nO(logn) = O(2nlogn) = O(nlogn)$
+
+  The whole chain is dependent, so $S(n) = nO(logn) + nO(logn) = O(2nlogn) = O(nlogn)$
