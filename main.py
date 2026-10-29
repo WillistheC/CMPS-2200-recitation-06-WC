@@ -45,10 +45,9 @@ class BinaryHeap:
         j....index of the parent of node i, or -1 if n/a
         """
         if i > 0:
-            ## TODO 
-            pass
+            return (i-1)//2
         else:
-            return 0
+            return -1
 
     def reheapUp(self, i):
         """
@@ -65,9 +64,12 @@ class BinaryHeap:
         c = i
         p = self.parent(i)
         print("reheaping  up from %d"%i)
-        while ((c != 0) and (self.H[c] < self.H[p])):
-            ## TODO
-            pass
+        if ((c != 0) and (self.H[c] < self.H[p])): #I changed the while to an if to allow recurrence; apologies if this is not the intended method
+            temp = self.H[p]
+            self.H[p] = self.H[c]
+            self.H[c] = temp
+            self.reheapUp(p)
+
 
     # restore the heap property going downward from node i
     def reheapDown(self, i):
@@ -84,12 +86,18 @@ class BinaryHeap:
         """
         c = i
         l = self.lchild(i)
-        r = self.rchild(i)
-        while (l > 0 and (self.H[c] > self.H[l])) or (r > 0 and (self.H[c] > self.H[r])):
-            ## TODO
-            pass
-        
-        
+        r = self.rchild(i) #I changed the while to an if to allow recurrence; apologies if this is not the intended method
+        if (l > 0 and (self.H[c] > self.H[l])) or (r > 0 and (self.H[c] > self.H[r])):
+            if self.H[l] <= self.H[r]:
+                temp = self.H[l]
+                self.H[l] = self.H[c]
+                self.H[c] = temp
+                self.reheapDown(l)
+            else:
+                temp = self.H[r]
+                self.H[r] = self.H[c]
+                self.H[c] = temp
+                self.reheapDown(r)
     def deleteMin(self):
         """
         Remove the root node to return its value.
